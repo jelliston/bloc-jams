@@ -61,6 +61,11 @@ body.landing {
     color: rgb(233,50,117);
 }
 
+.links-container .navbar-link:active { /*pseudo class selector */
+    color: rgb(233,50,117);
+    background-color: white;
+}
+
 .container {
     margin: 0 auto; /*top and bottom margins are 0, right and left margins are auto */
     max-width: 64rem;
