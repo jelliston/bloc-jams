@@ -8,8 +8,11 @@ function revealPoints(i) {
     }
 
 document.addEventListener("DOMContentLoaded", function(){ 
-for (var i = 0; i < points.length; i++) {
-    revealPoints(i);
-}
+  for (var i = 0; i < points.length; i++) {
+    (function(n){
+    setTimeout(function(){
+      revealPoints(n);
+    }, 10);
+    })(i);
+  }
 });
-
