@@ -30,6 +30,27 @@
      ]
  };
 
+//my example album
+var albumJj = {
+     name: 'I, Jonathan',
+     artist: 'Jonathan Richman',
+     label: 'Rounder Records',
+     year: '1992',
+     albumArtUrl: 'assets/images/album_covers/i_jonathan.jpg',
+     songs: [
+         { name: 'Parties in the U.S.A.', length: '4:42' },
+         { name: 'Tandem Jump', length: '2:10' },
+         { name: 'You Can\'t Talk to the Dude', length: '2:49'},
+         { name: 'Velvet Underground', length: '3:23' },
+         { name: 'I Was Dancing in the Lesbian Bar', length: '3:40'},
+         { name: 'Rooming House on Venice Beach', length: '5:04' },
+         { name: 'That Summer Feeling', length: '6:02' },
+         { name: 'Grunion Run (instrumental)', length: '2:31' },
+         { name: 'A Higher Power', length: '3:02' },
+         { name: 'Twighlight in Boston', length: '4:08' }
+     ]
+ };
+
 var createSongRow = function(songNumber, songName, songLength) {
     
     var template = 
@@ -74,3 +95,20 @@ window.onload = function() {
     setCurrentAlbum(albumPicasso);
     
 };
+
+var albumNames = [albumPicasso, albumMarconi, albumJj];
+
+var albumIndex = 0;
+
+function toggleAlbums() {
+    if (albumIndex >= (albumNames.length - 1)) {
+        albumIndex = 0; 
+    }
+    else {
+        albumIndex++;
+    }   
+        
+    setCurrentAlbum(albumNames[albumIndex])
+};
+
+document.getElementsByTagName('img')[1].addEventListener("click", toggleAlbums);
