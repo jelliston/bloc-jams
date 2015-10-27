@@ -14,20 +14,18 @@ var animatePoints = function (points) {
         }
 };
 
-window.onload = function() {
+$(window).load(function() {
 
-    // Automatically animate the points on a tall screen where scrolling can't trigger the animation
-     if (window.innerHeight > 950) {
-         animatePoints(points);
+    if ($(window).height() > 950) {
+        animatePoints();
      }
     
-    var sellingPoints = document.getElementsByClassName('selling-points')[0];
-    var scrollDistance = sellingPoints.getBoundingClientRect().top - window.innerHeight + 200;
+    var scrollDistance = $('.selling-points').offset().top - $(window).height() + 200;
     
-    window.addEventListener('scroll',function(event) {
+    $(window).scroll(function(event) {
         
-        if (document.body.scrollTop >= scrollDistance) {
-            animatePoints(points);
+        if ($(window).scrollTop() >= scrollDistance) {
+            animatePoints();
         }
         
     });
