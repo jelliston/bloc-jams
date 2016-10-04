@@ -14,7 +14,7 @@ var createSongRow = function(songNumber, songName, songLength) {
         var songNumber = parseInt($(this).attr('data-song-number'));
         
         if (currentlyPlayingSongNumber !== null) {  // Revert to song number for currently playing song because user started playing new song.
-		  var currentlyPlayingCell = parseInt($('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]'));
+		  var currentlyPlayingCell = $('.song-item-number[data-song-number="' + currentlyPlayingSongNumber + '"]');
 		  currentlyPlayingCell.html(currentlyPlayingSongNumber);
         }
         
@@ -33,7 +33,7 @@ var createSongRow = function(songNumber, songName, songLength) {
     };
     
     var onHover = function(event) {
-        var songNumberCell = parseInt($(this).find('.song-item-number'));
+        var songNumberCell = $(this).find('.song-item-number');
         var songNumber = parseInt(songNumberCell.attr('data-song-number'));
         
         if (songNumber !== currentlyPlayingSongNumber) {
@@ -42,7 +42,7 @@ var createSongRow = function(songNumber, songName, songLength) {
     };
     
     var offHover = function(event) {
-        var songNumberCell = parseInt($(this).find('.song-item-number'));
+        var songNumberCell = $(this).find('.song-item-number');
         var songNumber = parseInt(songNumberCell.attr('data-song-number'));
         
         if (songNumber !== currentlyPlayingSongNumber) {
