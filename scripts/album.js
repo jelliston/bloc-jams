@@ -126,7 +126,7 @@ var nextSong = function() {
 var previousSong = function() {
     
     var getLastSongNumber = function(index) {
-        index == (currentAlbum.songs.length - 1) ? return 1 : return index + 2;
+        return index == (currentAlbum.songs.length - 1) ? 1 : index + 2;
     };
     
     var currentSongIndex = trackIndex(currentAlbum, currentSongFromAlbum);
