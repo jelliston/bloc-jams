@@ -75,7 +75,7 @@ var setCurrentAlbum = function(album) {
 
 
     for (i = 0; i < album.songs.length; i++) {    //goes through all the songs from the album and inserts them into the HTML using innerHTML property  
-        var $newRow = createSongRow(i + 1, album.songs[i].name, album.songs[i].length);
+        var $newRow = createSongRow(i + 1, album.songs[i].title, album.songs[i].duration);
          $albumSongList.append($newRow);
     }
     
